@@ -2,7 +2,7 @@
 #choose second unit to convert to
 #given a value in the first unit, convert it to the second unit
 
-def convert_units(value, from_unit, to_unit):
+def convert_distance_units(value, from_unit, to_unit):
     # Define conversion factors for different units
     conversion_factors = {
         ("m", "cm"): 100,
@@ -60,16 +60,16 @@ def convert_units(value, from_unit, to_unit):
     if (from_unit, to_unit) in conversion_factors:
         return value * conversion_factors[(from_unit, to_unit)]   
 
-from_unit = input("Enter the unit to convert from (e.g., m, cm, km, in, ft, mi, yd): ")
-if from_unit not in ["m", "cm", "km", "in", "ft", "mi", "yd"]:
+from_unit = input("Enter the unit to convert from: ")
+if from_unit not in ["m", "cm", "km", "in", "ft", "mi", "yd", "meters", "centimeters", "kilometers", "inches", "feet", "miles", "yards"]:
         print("Invalid unit. Supported units are: m, cm, km, in, ft, mi, yd.")
         from_unit = input("Enter the unit to convert from (e.g., m, cm, km, in, ft, mi, yd): ")
 
 value = float(input("Enter the value to convert: "))
 
-to_unit = input("Enter the unit to convert to (e.g., m, cm, km, in, ft, mi, yd): ")
-if to_unit not in ["m", "cm", "km", "in", "ft", "mi", "yd"]:
+to_unit = input("Enter the unit to convert to: ")
+if to_unit not in ["m", "cm", "km", "in", "ft", "mi", "yd", "meters", "centimeters", "kilometers", "inches", "feet", "miles", "yards"]:
         print("Invalid unit. Supported units are: m, cm, km, in, ft, mi, yd.")
         to_unit = input("Enter the unit to convert to (e.g., m, cm, km, in, ft, mi, yd): ")
 
-print(f"{value} {from_unit} is equal to {convert_units(value, from_unit, to_unit)} {to_unit}")
+print(f"{value} {from_unit} is equal to {convert_distance_units(value, from_unit, to_unit)} {to_unit}")
