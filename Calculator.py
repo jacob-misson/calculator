@@ -42,7 +42,9 @@ if Calculater_on == "yes":
 		while operation in ["+", "-", "*", "/", "^"]:
 			y = ask_number()
 			
-			z = calculation(x, y, operation)
+			x = calculation(x, y, operation)
+			if isinstance(x, str):
+				break
     		
 			operation = input("Operation: ")
 			while operation not in ["+", "-", "*", "/", "^", "="]:
@@ -50,7 +52,7 @@ if Calculater_on == "yes":
 				operation = input("Operation:")
 
 
-		print ("Result:", z )
+		print ("Result:", x )
     	
 		Calculater_on = input("Do you want to perform another calculation? (yes/no): ")
 		if Calculater_on == "no":
